@@ -19,7 +19,7 @@ export class ReimbursementsHttpComponent implements OnInit {
     reimbursementReason: "",
     status: "",
     reimbursementDate: "",
-    imageUrl: ""
+   
   };
 
 
@@ -52,6 +52,13 @@ export class ReimbursementsHttpComponent implements OnInit {
       this.oneRequest = response;
       this.fetchAllPending();
     });
+  }
+
+  fetchEmpReimbursement(search: any){
+    this.managerService.fetchEmpReimbursement(search).subscribe((response: any) =>{
+      this.oneRequest =response
+    
+    })
   }
 
   ngOnInit(): void {

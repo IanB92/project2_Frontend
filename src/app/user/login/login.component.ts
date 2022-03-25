@@ -74,12 +74,12 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('user', JSON.stringify(response));
           localStorage.setItem("id", JSON.stringify(response.managerId))
           
-          if (response.userName == "") {
+          if (response.firstName == "") {
             //login failed
            
-            this.errorMessage = "Invalid Username";
+            this.errorMessage = "Invalid Credentials";
   
-          }else if(response.password =="") {
+          }else if(response.firstName =="") {
             this.errorMessagePassword = "Invalid Password"
           }else{
 
