@@ -1,6 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ManagerService } from '../manager.service';
 import { ResolvedComponent } from './resolved.component';
+import { empty } from 'rxjs';
+
+class fakeManagerService {
+  fetchAllResolved() {
+    return empty()
+  }
+};
 
 describe('ResolvedComponent', () => {
   let component: ResolvedComponent;
@@ -8,7 +15,7 @@ describe('ResolvedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResolvedComponent ]
+      declarations: [ ResolvedComponent ],providers: [{ provide: ManagerService, useClass: fakeManagerService }]
     })
     .compileComponents();
   });

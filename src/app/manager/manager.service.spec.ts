@@ -1,24 +1,24 @@
 import { TestBed } from '@angular/core/testing';
-
+import { HttpClient } from '@angular/common/http';
 import { ManagerService } from './manager.service';
+
+class FakeHttpClient{
+  
+}
+
 
 describe('ManagerService', () => {
   let service: ManagerService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({providers:[ {provide: HttpClient, useClass: FakeHttpClient}]});
     service = TestBed.inject(ManagerService);
   });
-//dsfdsaghf
+
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-  it('should return id ', () => {
-    let hedf= 1;
-    service.approve(hedf)
-    expect(service.approve(hedf)).toBeTruthy;
-
-  })
+  
 
 });
 

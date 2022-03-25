@@ -22,4 +22,9 @@ describe('HomeComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have strings', () =>{
+   let welcome = fixture.nativeElement.querySelector('#welcome')
+    expect(welcome.textContent).toContain('Reimbursement')
+  })
 });

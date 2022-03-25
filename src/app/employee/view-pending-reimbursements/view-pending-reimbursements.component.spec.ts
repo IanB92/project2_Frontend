@@ -1,6 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { empty } from 'rxjs';
 import { ViewPendingReimbursementsComponent } from './view-pending-reimbursements.component';
+import { EmployeeService } from '../employee.service';
+
+class fakeEmployeeService {
+  pendingReimbursements() {
+    return empty()
+  }
+};
 
 describe('ViewPendingReimbursementsComponent', () => {
   let component: ViewPendingReimbursementsComponent;
@@ -8,7 +15,7 @@ describe('ViewPendingReimbursementsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ViewPendingReimbursementsComponent]
+      declarations: [ViewPendingReimbursementsComponent], providers: [{ provide: EmployeeService, useClass: fakeEmployeeService }]
     })
       .compileComponents();
   });

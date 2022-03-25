@@ -1,6 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { EmployeeService } from '../employee.service';
 import { RequestReimbursementComponent } from './request-reimbursement.component';
+import { empty } from 'rxjs';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NgForm } from '@angular/forms';
+
+class fakeRouter{
+  navigate(){
+
+  }
+}
+class fakeEmployeeService {
+  reimbursement() {
+    return empty()
+  }
+};
 
 describe('RequestReimbursementComponent', () => {
   let component: RequestReimbursementComponent;
@@ -8,7 +23,7 @@ describe('RequestReimbursementComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RequestReimbursementComponent ]
+      declarations: [ RequestReimbursementComponent, NgForm ],providers: [{ provide: EmployeeService, useClass: fakeEmployeeService },{ provide: Router, useClass: fakeRouter }]
     })
     .compileComponents();
   });
