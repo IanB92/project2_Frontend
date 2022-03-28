@@ -37,6 +37,10 @@ describe('RequestReimbursementComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should have strings', () =>{
+    let welcome = fixture.nativeElement.querySelector('#welcome')
+     expect(welcome.textContent).toContain('Upload')
+   })
   // it('should request a reimbursement', ()=>{
 
   //   const compiled  = fixture.nativeElement as HTMLElement;

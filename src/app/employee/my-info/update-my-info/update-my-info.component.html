@@ -4,14 +4,14 @@
         <div class="card-body bg-light card-body-lg border border-5">
 
             <div class="form-group row">
-                <label for="firstName" class="col-sm-1 col-form-label text-dark ">First Name: </label>
+                <label for="firstName" class="col-sm-1 col-form-label text-dark " id="welcome">First Name: </label>
                 <input type="text" class="form-control" id="firstName" placeholder="employee First Name"
                     name="firstName" [(ngModel)]="newEmployee.employeeFirstName">
 
 
             </div>
             <div class="form-group row mt-3">
-                <label for="last Name" class="col-sm-1 col-form-label text-dark ">Last Name: </label>
+                <label for="last Name" class="col-sm-1 col-form-label text-dark " id="last">Last Name: </label>
                 <div class="col-sm-7">
                     <input class="form-control" type="text" id="lastName" placeholder="Enter Last name" name="lastName"
                         [(ngModel)]="newEmployee.employeeLastName">
@@ -19,7 +19,7 @@
 
             </div>
             <div class="form-group row mt-3">
-                <label for="Email" class="col-sm-1 col-form-label text-dark ">Email: </label>
+                <label for="Email" class="col-sm-1 col-form-label text-dark " id="email">Email: </label>
                 <div class="col-sm-7">
                     <input class="form-control" type="text" id="Email" placeholder="Enter Last name" name="Email"
                         [(ngModel)]="newEmployee.employeeEmail">

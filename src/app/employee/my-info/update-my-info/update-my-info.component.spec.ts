@@ -47,4 +47,16 @@ describe('UpdateMyInfoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should have strings', () =>{
+    let welcome = fixture.nativeElement.querySelector('#welcome')
+     expect(welcome.textContent).toContain('First')
+   })
+   it('should have strings', () =>{
+    let welcome = fixture.nativeElement.querySelector('#last')
+     expect(welcome.textContent).toContain('Last')
+   })
+   it('should have strings', () =>{
+    let welcome = fixture.nativeElement.querySelector('#email')
+     expect(welcome.textContent).toContain('Email')
+   })
 });

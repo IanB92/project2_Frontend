@@ -7,9 +7,9 @@
             <tbody>
                 <tr>
                     <td>
-                        <label class="col-sm-1 col-form-label text-dark ">First Name: </label>
+                        <label class="col-sm-1 col-form-label text-dark " >First Name: </label>
                     </td>
-                    <td>{{newEmployee.employeeFirstName }}</td>
+                    <td >{{newEmployee.employeeFirstName }}</td>
                 </tr>
                 <tr>
                     <td>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="card-footer bg-light">
-        <button type="submit" class="btn btn-primary" (click)="updateInfo()">
+        <button type="submit" class="btn btn-primary" (click)="updateInfo()" id="welcome">
             UPDATE
         </button>
     </div>
